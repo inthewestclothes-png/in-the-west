@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>IN THE WEST</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Fondo oscuro -->
+
+    <div class="overlay" onclick="cerrarCarrito()"></div>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <img src="logo.png" class="logo">
+
+        <nav>
+
+            <a href="#inicio">Inicio</a>
+
+            <a href="#coleccion">Colección</a>
+
+            <a href="#contacto">Contacto</a>
+
+            <a href="#" onclick="toggleCarrito(); return false;">
+
+                🛒 <span id="contador">0</span>
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Hero -->
+
+    <section id="inicio" class="hero">
+
+        <p>STREETWEAR • CULTURA • IDENTIDAD</p>
+
+        <button>SHOP NOW</button>
+
+    </section>
+
+
+
+    <!-- Productos -->
+
+    <section id="coleccion" class="productos">
+
+        <h2>NUESTRA COLECCIÓN</h2>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <img src="Imagenes/modelo1.png">
+
+                <h3>Músculosa Oversize</h3>
+
+                <p>$25.000</p>
+
+                <select id="talle1">
+
+                <option>S</option>
+
+                <option>M</option>
+
+                <option selected>L</option>
+
+                <option>XL</option>
+
+                </select>
+
+                <button onclick="agregarCarrito(
+
+                'Músculosa Oversize',
+
+                25000,
+
+                document.getElementById('talle1').value
+
+              )">
+
+              Agregar
+
+             </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="Imagenes/modelo2.jpg">
+
+                <h3>Remera Premium</h3>
+
+                <p>$40.000</p>
+
+                <select id="talle1">
+
+                <option>S</option>
+
+                <option>M</option>
+
+                <option selected>L</option>
+
+                <option>XL</option>
+
+                </select>
+
+                <button onclick="agregarCarrito(
+
+                'Remera Premium',
+
+                40000,
+
+                document.getElementById('talle1').value
+
+                )">
+
+                Agregar
+
+
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <img src="Imagenes/modelo3.jpg">
+
+                <h3>Remera Street</h3>
+
+                <p>$45.000</p>
+
+               <select id="talle1">
+
+               <option>S</option>
+
+               <option>M</option>
+
+               <option selected>L</option>
+
+               <option>XL</option>
+
+               </select>
+
+               <button onclick="agregarCarrito(
+
+               'Remera Street',
+
+                45000,
+
+               document.getElementById('talle1').value
+
+              )">
+
+              Agregar
+
+             </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Carrito lateral -->
+
+    <div class="carrito-flotante">
+
+        <h3>🛒 Carrito</h3>
+
+        <div id="listaCarrito"></div>
+
+        <h4 id="total">$0</h4> 
+        <button
+        onclick="enviarWhatsapp()"
+        class="btn-whatsapp">
+
+        Finalizar compra
+
+        </button>"
+
+
+    </div>
+
+
+
+    <!-- Contacto -->
+
+    <section class="contacto" id="contacto">
+
+        <h2>CONTACTO</h2>
+
+        <p>Instagram: @inthewest_clothes</p>
+
+        <p>WhatsApp: +54 11 6480 6264</p>
+
+    </section>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

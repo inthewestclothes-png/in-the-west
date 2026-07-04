@@ -1,0 +1,577 @@
+/* ========================= */
+/* GENERAL */
+/* ========================= */
+
+body{
+
+    margin:0;
+    padding:0;
+
+    font-family:Arial,sans-serif;
+
+    background:#000;
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:25px 70px;
+
+    box-sizing:border-box;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    z-index:1000;
+
+}
+
+
+/* LOGO */
+
+.logo{
+
+    height:220px;
+
+    margin-left:-15px;
+
+    position:relative;
+
+    top:-25px;
+
+}
+
+
+/* MENU */
+
+nav{
+
+    display:flex;
+
+    gap:45px;
+
+    margin-top:20px;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-5px;
+
+    width:0;
+
+    height:2px;
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+nav a:hover{
+
+    opacity:.7;
+
+}
+
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+
+    height:100vh;
+
+    position:relative;
+
+    background-image:url("Imagenes/fondo.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+}
+
+
+.hero p{
+
+    position:absolute;
+
+    left:90px;
+
+    bottom:170px;
+
+    font-size:20px;
+
+    letter-spacing:3px;
+
+}
+
+
+.hero button{
+
+    position:absolute;
+
+    left:90px;
+
+    bottom:90px;
+
+    padding:18px 45px;
+
+    border:none;
+
+    background:white;
+
+    color:black;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.hero button:hover{
+
+    background:#ddd;
+
+}
+
+
+/* ========================= */
+/* PRODUCTOS */
+/* ========================= */
+
+.productos{
+
+    padding:100px 60px;
+
+    background:#050505;
+
+}
+
+.productos h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:60px;
+
+}
+
+
+.grid{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.card{
+
+    width:260px;
+
+    background:#111;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    border:1px solid #222;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:white;
+
+}
+
+
+.card img{
+
+    width:100%;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+}
+
+
+.card h3{
+
+    font-size:22px;
+
+    margin-bottom:10px;
+
+}
+
+
+.card p{
+
+    font-size:20px;
+
+    color:#aaa;
+
+}
+
+
+.card button{
+
+    margin-top:15px;
+
+    padding:12px 28px;
+
+    border:none;
+
+    background:white;
+
+    color:black;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.card button:hover{
+
+    background:#ddd;
+
+}
+
+
+/* ========================= */
+/* CONTACTO */
+/* ========================= */
+
+.contacto{
+
+    padding:100px 60px;
+
+    text-align:center;
+
+    background:#000;
+
+}
+
+.contacto h2{
+
+    font-size:42px;
+
+    margin-bottom:30px;
+
+}
+
+.contacto p{
+
+    color:#999;
+
+    font-size:18px;
+
+}
+
+
+/* ========================= */
+/* OVERLAY */
+/* ========================= */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:.35s;
+
+    z-index:9998;
+
+}
+
+.overlay.activo{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+
+/* ========================= */
+/* CARRITO */
+/* ========================= */
+
+.carrito-flotante{
+
+    position:fixed;
+
+    top:0;
+
+    right:-360px;
+
+    width:340px;
+
+    height:100vh;
+
+    background:#111;
+
+    padding:30px;
+
+    box-sizing:border-box;
+
+    border-left:1px solid #222;
+
+    overflow-y:auto;
+
+    transition:.35s;
+
+    z-index:9999;
+
+}
+
+
+.carrito-flotante.abierto{
+
+    right:0;
+
+}
+
+
+.carrito-flotante h3{
+
+    margin-top:0;
+
+    margin-bottom:30px;
+
+    font-size:28px;
+
+}
+
+
+#listaCarrito{
+
+    margin-top:20px;
+
+}
+
+
+#listaCarrito p{
+
+    padding:15px 0;
+
+    border-bottom:1px solid #222;
+
+    color:#ddd;
+
+}
+
+
+#total{
+
+    margin-top:30px;
+
+    font-size:24px;
+
+    text-align:right;
+
+    font-weight:bold;
+
+}
+
+/* SELECTOR DE TALLES */ 
+
+.card select{
+
+width:100%;
+
+padding:12px;
+
+margin-top:15px;
+
+margin-bottom:15px;
+
+background:#191919;
+
+border:1px solid #333;
+
+color:white;
+
+border-radius:8px;
+
+}
+
+.card button{
+
+    width:100%;
+
+    padding:12px;
+
+}
+
+/* ========================= */
+/* ITEMS DEL CARRITO */
+/* ========================= */
+
+.item-carrito{
+
+    padding:15px 0;
+
+    border-bottom:1px solid #222;
+
+}
+
+.item-carrito small{
+
+    display:block;
+
+    color:#888;
+
+    margin:6px 0;
+
+}
+
+.item-carrito button{
+
+    background:#222;
+
+    border:none;
+
+    padding:8px 12px;
+
+    color:white;
+
+    border-radius:6px;
+
+    margin-top:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.item-carrito button:hover{
+
+    background:#444;
+
+}
+
+/*boton whatsapp*/
+.btn-whatsapp{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:25px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#25D366;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-whatsapp:hover{
+
+    background:#1ebe5d;
+
+} 
